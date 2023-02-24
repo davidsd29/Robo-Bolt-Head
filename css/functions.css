@@ -1,0 +1,488 @@
+/* Spark function */
+/* Spark based on input */
+/* Spark color */
+form:has(input[value="low"]:checked) section:first-child span:first-child,
+form:has(input[value="low"]:checked) section:first-child span:first-child::before,
+form:has(input[value="low"]:checked) section:first-child span:first-child::after {
+    background-image: linear-gradient(to bottom, #ffcf3f 0%, #cdc7b5 50%, #ffcf3f 100%);
+}
+
+form:has(input[value="normal"]:checked) section:first-child span:first-child,
+form:has(input[value="normal"]:checked) section:first-child span:first-child::before,
+form:has(input[value="normal"]:checked) section:first-child span:first-child::after {
+    background-image: linear-gradient(to bottom, #ffe7a0 0%, #fbecb5 50%, #ffe7a0 100%);
+}
+
+form:has(input[value="high"]:checked) section:first-child span:first-child::before,
+form:has(input[value="high"]:checked) section:first-child span:first-child::after {
+    background-image: linear-gradient(to bottom, #ffcf3f 0%, #fff2cb 50%, #ffcf3f 100%);
+}
+
+/* Spark glow */
+form:has(input[value="low"]:checked) section:first-child span:first-child {
+    box-shadow: 0px 0 4em 10px #f7d386;
+}
+
+form:has(input[value="low"]:checked) section:first-child span:first-child::before,
+form:has(input[value="low"]:checked) section:first-child span:first-child::after {
+    box-shadow: 70px 0 4em 10px #f7d386;
+}
+
+form:has(input[value="normal"]:checked) section:first-child span:first-child {
+    box-shadow: 0px 0 4em 10px #f7d386;
+}
+
+form:has(input[value="normal"]:checked) section:first-child span:first-child::before,
+form:has(input[value="normal"]:checked) section:first-child span:first-child::after {
+    box-shadow: 70px 0 4em 10px #f7d386;
+}
+
+form:has(input[value="high"]:checked) section:first-child span:first-child {
+    box-shadow: 0px 0 5em 20px #ffae00;
+    animation: flicker 1.5s infinite alternate;
+}
+
+form:has(input[value="high"]:checked) section:first-child span:first-child::before,
+form:has(input[value="high"]:checked) section:first-child span:first-child::after {
+    box-shadow: 50px 0 5em 20px #ffae00;
+    animation: flicker 2s infinite alternate;
+}
+
+@keyframes flicker {
+
+    0%,19%, 21%,23%,25%,54%, 56%,100% {
+        box-shadow:
+            50px 0 5em 20px #f7d386,
+            50px 0 5em 20px #f7d386,
+            50px 0 5em 20px #f7d386;
+    }
+
+    20%,24%, 55% {
+        text-shadow: none;
+        box-shadow: none;
+    }
+}
+
+
+/* ERROR FUNCTION */
+/* Arm smoke */
+form:has([name="error"]:checked)::before {
+    content: '';
+    position: absolute;
+    top: 37%;
+    right: -5%;
+    width: 15em;
+    height: 6em;
+    opacity: 0;
+    background: url(/img/smoke.png) 100% 100% no-repeat;
+    background-size: 100% 100%;
+    transition: all 0.5s;
+    animation: error-smoke 5s ease-out 1;
+}
+
+form:has([name="error"]:checked)::after {
+    opacity: 1;
+}
+
+form:has(input[name="error"]:checked) section:first-child>div div {
+    --eye-value: 95%;
+}
+
+form:has(input[name="error"]:checked) section:nth-child(2)::before {
+    opacity: 1;
+}
+/* Arm */
+form:has([name="error"]:checked) section:nth-child(2) div:nth-child(2) div:last-of-type {
+    top: 100%;
+    transform: rotateX(73deg) rotate(-45deg) rotateY(-28deg);
+    animation: faling-arm 5s linear 1;
+}
+
+form:has([name="error"]:checked) section:nth-child(2) div:nth-child(2) div:first-of-type {
+    transform: rotate(180deg) scaleX(-1);
+    transition: 2s ease-out;
+    transform-origin: top;
+}
+
+/* under arm */
+form:has([name="error"]:checked) section:nth-child(2) div:nth-child(2) div span {
+    box-shadow: -1em 1.25em 2em -3px var(--shadow);
+}
+
+@keyframes error-smoke {
+    0% {
+        opacity: 1;
+        transform: translateY(-2%) scale(.5);
+    }
+
+    25% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(5%) scale(2.5);
+    }
+}
+
+@keyframes faling-arm {
+    0% {
+        top: 43%;
+        transform: rotateX(30deg);
+    }
+
+    30% {
+        transform: rotate(-50deg);
+    }
+
+    40% {
+        transform: rotateX(30deg);
+    }
+
+    50% {
+        transform: rotateX(0deg);
+    }
+
+    60% {
+        top: 60%;
+        right: -2%;
+        transform: rotateX(62deg);
+    }
+
+    70% {
+        top: 100%;
+        transform: rotateX(117deg);
+    }
+
+    80% {
+        top: 90%;
+        transform: rotateX(70deg);
+    }
+
+    100% {
+        top: 100%;
+        transform: rotateX(73deg) rotate(-45deg) rotateY(-28deg);
+    }
+}
+
+
+/* DEMON FUNCTION */
+/* Demon eyes */
+:root:has([name="demon"]:checked) {
+    --iris: red;
+}
+
+/* Demon mode antenna */
+form:has([name="demon"]:checked) section:first-child span:nth-of-type(2),
+form:has([name="demon"]:checked) section:first-child span:nth-of-type(3) {
+    top: 29%;
+    left: 41%;
+    transform: rotate(111deg);
+}
+
+
+form:has([name="demon"]:checked) section:first-child span:nth-of-type(3) {
+    transform: rotate(66deg);
+}
+
+form:has([name="demon"]:checked) section:first-child span:nth-of-type(2)::before,
+form:has([name="demon"]:checked) section:first-child span:nth-of-type(3)::before {
+    width: 16em;
+    height: 8em;
+    border-radius: 0 93% 0 50%;
+    box-shadow: inset 0 0 0.2em #a1a1a1;
+    background: radial-gradient(circle at top left, #b1b1b1, #4d4d4d, #000000);
+}
+
+form:has([name="demon"]:checked) section:first-child span:nth-of-type(3)::before {
+    top: -9em;
+    right: -17em;
+    border-radius: 50% 0% 93%;
+    box-shadow: inset 0 0 0.2em #a1a1a1;
+    background: radial-gradient(circle at top left, #b1b1b1, #4d4d4d, #000000);
+}
+
+/* Demon mode Ears */
+form:has([name="demon"]:checked)>section:first-child>div::before {
+    border-radius: 0 2.2em 0 25px;
+}
+
+form:has([name="demon"]:checked)>section:first-child>div::after {
+    border-radius: 25px 0 1.2em 0;
+}
+
+/* Demon mode neck */
+form:has([name="demon"]:checked) section:nth-child(3)::before,
+form:has([name="demon"]:checked) section:nth-child(3)::after {
+    left: 35%;
+    width: 30%;
+}
+
+
+/* DARKMODE */
+:root:has([name="darkmode"]:checked) {
+    --body-gloss: #939393;
+    --body-base: var(--secondary);
+    --body-darkBase: var(--secondary);
+}
+
+
+
+
+/* TEXT FUNCTION */
+form:has([type="text"]:valid:not(:placeholder-shown))>section:first-child>div {
+    animation: shake 0.5s 1s infinite;
+}
+
+/* Input text valid */
+/* Transform eyes */
+form:has([type="text"]:valid:not(:placeholder-shown)) section:first-child>div div {
+    --y: 95%;
+}
+
+/* Transform eye brow */
+form:has([type="text"]:valid:not(:placeholder-shown)) section:first-child>div div:first-of-type:before {
+    top: 5%;
+    left: 15%;
+    transform: rotate(45deg);
+}
+
+/* Transform eye brow */
+form:has([type="text"]:valid:not(:placeholder-shown)) section:first-child>div div:last-of-type:before {
+    top: 5%;
+    left: -35%;
+    transform: rotate(-45deg);
+}
+
+/* Transform mouth */
+form:has([type="text"]:not(:placeholder-shown)) section:first-child>div span,
+form:has([name="error"]:checked) section:first-child>div span {
+    top: 75%;
+    width: 20%;
+    height: 23%;
+    border-radius: 50%;
+}
+
+/* Transform when typing */
+/* eyes */
+form:has([type="text"]:not(:placeholder-shown)) section:first-child>div div {
+    --y: 95%;
+    --x: 50%;
+}
+
+/* brow left */
+form:has([type="text"]:not(:placeholder-shown)) section:first-child>div div:before {
+    top: -50%;
+    transform: rotate(-15deg);
+}
+
+/* brow right */
+form:has([type="text"]:not(:placeholder-shown)) section:first-child>div div:last-of-type:before {
+    transform: rotate(15deg);
+}
+
+/* Transform mouth back to normal */
+form:has([type="text"]:valid:not(:placeholder-shown)) section:first-child>div span {
+    position: absolute;
+    top: 75%;
+    width: 40%;
+    height: 5%;
+    border-radius: 1.5em;
+}
+
+form:has([type="text"]:valid:not(:placeholder-shown)) section:first-child>div div {
+    box-shadow: inset 0 0 1.5em 0.3em var(--indicator);
+}
+
+/* Teath */
+form:has([type="text"]:valid:not(:placeholder-shown)) section:first-child span:nth-of-type(4) i {
+    background-color: var(--indicator);
+}
+
+form:has([type="text"]:valid:not(:placeholder-shown)) section:first-child>div span div {
+    display: flex;
+}
+
+form:has([type="text"]:not(:placeholder-shown)) section:first-child>div span div {
+    display: none;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+
+    10% {
+        transform: translate(-50%, -52%) rotate(2deg);
+    }
+
+    20% {
+        transform: translate(-50%, -48%);
+    }
+
+    30% {
+        transform: translate(-50%, -54%);
+    }
+
+    40% {
+        transform: translate(-50%, -50%);
+    }
+
+    50% {
+        transform: translate(-50%, -52%) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-50%, -50%);
+    }
+
+    70% {
+        transform: translate(-50%, -52%);
+    }
+
+    80% {
+        transform: translate(-50%, -50%);
+    }
+
+    90% {
+        transform: translate(-50%, -52%);
+    }
+
+    100% {
+        transform: translate(-50%, -52%) rotate(-1deg);
+    }
+}
+
+
+
+
+/* ROBO BUFF FUNCTION */
+form:has([name="buff"]:checked)>section:first-child>div {
+    animation: big-buff 2s ease-in;
+    width: 80%;
+}
+
+form:has([name="buff"]:checked) section:nth-child(2) div:nth-child(2) div span::before {
+    left: -7%;
+    width: 5em;
+}
+
+/* Buff mode */
+form:has([name="buff"]:checked) section:nth-child(2) div:nth-child(2) div {
+    width: 18%;
+    right: 4%;
+    transform: rotate(-40deg);
+}
+
+form:has([name="buff"]:checked) section:nth-child(2) div:nth-child(2) div:first-of-type {
+    left: 4%;
+    transform: rotate(40deg);
+}
+
+form:has([name="buff"]:checked) section:nth-child(2) div:nth-child(2) div:last-of-type span,
+form:has([name="buff"]:checked) section:nth-child(2) div:nth-child(2) div:last-of-type span {
+    transform: rotate(40deg);
+}
+
+form:has([name="buff"]:checked) section:nth-child(2) div:nth-child(2) div:first-of-type::before {
+    top: 81%;
+    left: 14%;
+    transform: rotate(-18deg);
+}
+
+form:has([name="buff"]:checked) section:nth-child(2) div:last-of-type div:last-of-type:before {
+    right: 14%;
+    left: auto;
+    transform: rotate(18deg);
+}
+
+@keyframes big-buff {
+    0% {
+        width: 60%;
+    }
+
+    50% {
+        width: 90%;
+        animation-timing-function: ease-out;
+    }
+
+    60% {
+        width: 70%;
+        animation-timing-function: ease-in;
+    }
+
+    70% {
+        width: 90%;
+        animation-timing-function: ease-out;
+    }
+
+    100% {
+        width: 80%;
+        animation-timing-function: ease-in;
+    }
+}
+
+
+/* Valut functions */
+form:has(input[name="vault"]:checked) section:first-child>div div {
+    --y: 95%;
+}
+
+form:has(input[name="vault"]:checked) section:first-child>div>div:first-of-type:before {
+    top: 8%;
+    left: 15%;
+    transform: rotate(45deg);
+}
+
+form:has(input[name="vault"]:checked) section:first-child>div>div:last-of-type:before {
+    top: 5%;
+    left: -35%;
+    transform: rotate(-45deg);
+}
+
+form:has(input[name="vault"]:checked)>section:first-child>div span i {
+    background-color: var(--indicator);
+}
+
+/* Vault Opening */
+section[data-value="operation-panel"]:has(input[name="vault"]:checked)>div:nth-of-type(2) div:first-child {
+    transform: perspective(1200px) translateZ(0px) translateX(0px) translateY(0px) rotateY(-105deg);
+}
+
+
+
+/* MOTHER BOARD FUNCTIONS */
+div[data-value="motherboard"] label:has(input:checked) {
+    background-color: lime;
+    box-shadow: 0px 0px 5px var(--lights-on), inset 0px 0px 2px var(--shadow);
+}
+
+/* OPERATION PANEL FUNCTIONS */
+/* Button Lights */
+section[data-value="operation-panel"] label:has(input:checked) {
+    border-width: 0px;
+    box-shadow: inset 0 .5em .5em green, var(--lights-highlight);
+    background-color: var(--lights-on);
+}
+
+/* Air pressure */
+section[data-value="operation-panel"]:has(input[value="low"]:checked)>div:nth-child(2) span::before {
+    transform: translate(-50%, -80%) rotate(-95deg);
+}
+
+section[data-value="operation-panel"]:has(input[value="normal"]:checked)>div:nth-child(2) span::before {
+    transform: translate(-50%, -80%) rotate(0deg);
+}
+
+
+section[data-value="operation-panel"]:has(input[value="high"]:checked)>div:nth-child(2) span::before {
+    transform: translate(-50%, -80%) rotate(95deg);
+}
