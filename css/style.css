@@ -1211,8 +1211,12 @@ form section:nth-child(4)>div::after {
     /* background-color: var(--body-darkBase); */
     background-image: radial-gradient(  at 50% 90%, var(--body-gloss) 10%, var(--body-base) 60%);
 }
-
-
+/* Wiki */
+img[src~="thumbnail"] {
+    height: 10em;
+    width: 10em;
+    object-fit: contain;
+}
 
 @keyframes bottom-flashing {
     0% {
