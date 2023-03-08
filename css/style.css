@@ -50,14 +50,14 @@ body > div {
     height: 100%;
     box-shadow:inset .5em .5em .5em var(--shadow);
     background: 
-    /* Screws */
-    radial-gradient(closest-side circle, var(--body-gloss), var(--body-darkBase) 70%, #2a2a2a 90%, transparent 0),
-    radial-gradient(closest-side circle, var(--secondary) 90%, transparent 0 ),
-    
-    radial-gradient(closest-side circle, var(--body-gloss), var(--body-darkBase) 70%, #2a2a2a 90%, transparent 0),
-    radial-gradient(closest-side circle, var(--secondary) 90%, transparent 0),
-    
-    radial-gradient(closest-side circle, var(--body-gloss), var(--body-darkBase) 70%, #2a2a2a 90%, transparent 0),
+        /* Screws */
+        radial-gradient(closest-side circle, var(--body-gloss), var(--body-darkBase) 70%, #2a2a2a 90%, transparent 0),
+        radial-gradient(closest-side circle, var(--secondary) 90%, transparent 0 ),
+        
+        radial-gradient(closest-side circle, var(--body-gloss), var(--body-darkBase) 70%, #2a2a2a 90%, transparent 0),
+        radial-gradient(closest-side circle, var(--secondary) 90%, transparent 0),
+        
+        radial-gradient(closest-side circle, var(--body-gloss), var(--body-darkBase) 70%, #2a2a2a 90%, transparent 0),
         radial-gradient(closest-side circle, var(--secondary) 90%, transparent 0),
 
         radial-gradient(closest-side circle, var(--body-gloss),var(--body-darkBase) 70%,#2a2a2a 90%, transparent 0 ),
@@ -130,6 +130,7 @@ form {
     width: 25em;
     height: 25em;
     perspective: 6.25em;
+    transition: 1s;
 }
 
  /* Spark's */

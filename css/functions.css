@@ -361,7 +361,10 @@ form:has([type="text"]:not(:placeholder-shown)) section:first-child>div span div
     }
 }
 
-
+/* INVERT FUNCTION */
+form:has([name="invert"]:checked) {
+    filter: sepia(1) invert(1) ;
+}
 
 
 /* ROBO BUFF FUNCTION */
