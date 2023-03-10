@@ -74,7 +74,7 @@ form:has([name="error"]:checked)::before {
     width: 15em;
     height: 6em;
     opacity: 0;
-    background: url(img/smoke.png) 100% 100% no-repeat;
+    background: url(../img/smoke.png) 100% 100% no-repeat;
     background-size: 100% 100%;
     transition: all 0.5s;
     animation: error-smoke 5s ease-out 1;
