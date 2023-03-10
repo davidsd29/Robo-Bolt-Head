@@ -3,7 +3,7 @@ let head = document.querySelector('head');
 
 let i = 0;
 while (i < ranges.length) {
-	console.log("lala")
+	console.log("I'm wondering what you are trying to find here")
 	ranges[i].addEventListener('input',function(){
 		slide(this);
 	});
@@ -17,5 +17,4 @@ function slide(s){
 	let sliderID = s.id;
 
 	document.body.style.setProperty('--eye'+sliderID+'-value',sliderValue+'%');
-	// head.setAttribute('data-'+sliderID+'-value',sliderValue);
 }
