@@ -460,7 +460,9 @@ section[data-value="operation-panel"]:has(input[name="vault"]:checked)>div:nth-o
     transform: perspective(1200px) translateZ(0px) translateX(0px) translateY(0px) rotateY(-105deg);
 }
 
-
+section[data-value="operation-panel"]:has(input[name="vault"]:checked) div[data-value="motherboard"]{
+    transform: scale(1.2) translateY(-24px) translateX(-43px);
+}
 
 /* MOTHER BOARD FUNCTIONS */
 div[data-value="motherboard"] label:has(input:checked) {

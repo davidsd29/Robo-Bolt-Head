@@ -886,6 +886,7 @@ div[data-value="motherboard"] {
     box-shadow: inset 0 0 1em #4b8d5d;
     transform: translate(-50%, -50%);
     overflow: hidden;
+    transition: 10s;
 }
 
 div[data-value="motherboard"] div {
