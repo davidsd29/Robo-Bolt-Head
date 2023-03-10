@@ -461,7 +461,7 @@ section[data-value="operation-panel"]:has(input[name="vault"]:checked)>div:nth-o
 }
 
 section[data-value="operation-panel"]:has(input[name="vault"]:checked) div[data-value="motherboard"]{
-    transform: scale(1.2) translateY(-24px) translateX(-43px);
+    transform: scale(1.2) translateY(-24px) translateX(-44.5px);
 }
 
 /* MOTHER BOARD FUNCTIONS */
