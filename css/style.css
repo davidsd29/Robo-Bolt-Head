@@ -545,7 +545,7 @@ form section:nth-child(2)::after {
     right: 9%;
     width: 2.5em;
     height: 2.5em;
-    background: url(/img/kabels.png) 100% 100% no-repeat;
+    background: url(img/kabels.png) 100% 100% no-repeat;
     background-size: 100% 100%;
     transform: rotate(101deg);
     transition: 0.5s;
