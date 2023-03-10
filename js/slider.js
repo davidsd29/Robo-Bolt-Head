@@ -3,6 +3,7 @@ let head = document.querySelector('head');
 
 let i = 0;
 while (i < ranges.length) {
+	console.log("lala")
 	ranges[i].addEventListener('input',function(){
 		slide(this);
 	});
