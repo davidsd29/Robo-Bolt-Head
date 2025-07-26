@@ -1,20 +1,18 @@
-const ranges = document.querySelectorAll('[type=range]');
-let head = document.querySelector('head');
+const ranges = document.querySelectorAll('[type="range"]');
+console.log("I'm wondering what you are trying to find here");
 
-let i = 0;
-while (i < ranges.length) {
-	console.log("I'm wondering what you are trying to find here")
-	ranges[i].addEventListener('input',function(){
-		slide(this);
-	});
-	// also set attributes onload of page
-	slide(ranges[i]);
-	i++;
-}
+ranges.forEach(range => {
+	// Add event listener to update the value on input change
+	range.addEventListener('input', () => slide(range));
 
-function slide(s){
-	let sliderValue = s.value;
-	let sliderID = s.id;
+	slide(range);
+});
 
-	document.body.style.setProperty('--eye'+sliderID+'-value',sliderValue+'%');
+// Function to update CSS variable based on slider value
+function slide(slider) {
+	const value = slider.value;
+	const id = slider.id;
+
+	// Set custom CSS variable on the body element
+	document.body.style.setProperty(`--eye${id}-value`, `${value}%`);
 }
