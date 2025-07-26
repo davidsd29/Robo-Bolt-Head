@@ -11,7 +11,7 @@ ranges.forEach(range => {
 // Function to update CSS variable based on slider value
 function slide(slider) {
 	const value = slider.value;
-	const id = slider.id;
+	const id = String(slider.id);
 
 	// Set custom CSS variable on the body element
 	document.body.style.setProperty(`--eye${id}-value`, `${value}%`);
